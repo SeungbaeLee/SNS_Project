@@ -10,6 +10,6 @@ public interface SubscribeRepository extends JpaRepository<Subscribe, Integer> {
     void mSubscribe(int fromUserId, int toUserId);//1(변경된 행의 개수가 리턴됨), -1
 
     @Modifying
-    @Query(value = "DELETE FROM subscribe WHERE fromUserId=: fromUserId AND toUserId =:toUserId", nativeQuery = true)
+    @Query(value = "DELETE FROM subscribe WHERE fromUserId=:fromUserId AND toUserId =:toUserId", nativeQuery = true)
     void mUnSubscribe(int fromUserId, int toUserId);//1,-1
 }
